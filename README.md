@@ -1,24 +1,7 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# rails-auth
+`devise` や `sorcery` 等の認証用のGemを使用せずに, なるべく素の `Rails` で認証ロジックを実装しました.
+追加したGems
+- bootstrap-sass
+    - CSSのFW, Bootstrapを使用するため
+- bcrypt
+    - ハッシュ化関数を使用するため (`has_secure_password` を使用する際に必要)
