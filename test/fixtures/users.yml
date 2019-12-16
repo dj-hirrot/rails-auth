@@ -1,0 +1,4 @@
+hiroto:
+  name: Hiroto Mori
+  email: hiroto@auth.com
+  password_digest: <%= User.digest('password') %>
