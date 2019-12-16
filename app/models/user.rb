@@ -14,6 +14,8 @@ class User < ApplicationRecord
 
   # return hash value of param string
   def self.digest(string)
-    cost = ActiveModel::SecurePassword.min_const ? BCrypt::Engine::MIN_COST : BCrypt::Password.create(string, cost: cost)
+    cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST : BCrypt::Engine.cost
+
+    BCrypt::Password.create(string, cost: cost)
   end
 end
