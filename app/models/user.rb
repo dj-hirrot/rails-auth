@@ -15,8 +15,12 @@ class User < ApplicationRecord
   validates :password, presence: true, length: { minimum: 6 }
 
   def remember
-    self.remember_token = self.generate_token
-    update_attribute(:remember_digest, self.digest)
+    self.remember_token = User.generate_token
+    update_attribute(:remember_digest, User.digest(remember_token))
+  end
+
+  def authenticated?(remember_token)
+    BCrypt::Password.new(remember_digest).is_password?(remember_token)
   end
 
   # return hash value of param string
