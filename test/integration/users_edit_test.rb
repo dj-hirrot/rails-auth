@@ -52,8 +52,8 @@ class UsersEditTest < ActionDispatch::IntegrationTest
     login_as(@other_user)
 
     get edit_user_path(@user)
-    assert_not flash.empty?
-    assert_redirected_to login_url
+    assert flash.empty?
+    assert_redirected_to root_url
   end
 
   test 'should redirect update when not logged in' do
@@ -65,7 +65,7 @@ class UsersEditTest < ActionDispatch::IntegrationTest
         email: @user.email
       }
     }
-    assert_not flash.empty?
-    assert_redirected_to login_url
+    assert flash.empty?
+    assert_redirected_to root_url
   end
 end
