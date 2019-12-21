@@ -26,8 +26,10 @@ class UsersEditTest < ActionDispatch::IntegrationTest
     assert_select '.alert-danger', 'The form contains 4 errors.'
   end
 
-  test 'successful edit' do
+  test 'successful edit with friendly forwarding' do
+    get edit_user_path(@user)
     login_as(@user)
+    assert_redirected_to edit_user_url(@user)
 
     get edit_user_path(@user)
     assert_template 'users/edit'
