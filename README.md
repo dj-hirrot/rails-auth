@@ -11,4 +11,5 @@
 - [x] `login`
 - [x] `use vue`
 - [ ] `confirmation`
+- [ ] `connect to vue`
 
