@@ -10,6 +10,6 @@
 - [x] `signup`
 - [x] `login`
 - [x] `use vue`
-- [ ] `confirmation`
+- [x] `confirmation`
 - [ ] `connect to vue`
 
